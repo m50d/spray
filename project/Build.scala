@@ -139,7 +139,7 @@ object Build extends Build {
         unmanagedSources in Compile ~= {
           _.filter { f =>
             val isExcluded = sourceWithShapeless2Changes(f.getName.toLowerCase)
-            !(isExcluded && f.getAbsolutePath.contains("spray-routing/"))
+            !(isExcluded && f.getAbsolutePath.contains("spray-routing" + java.io.File.separator))
           }
         },
         libraryDependencies ++= {
