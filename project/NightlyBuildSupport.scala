@@ -17,7 +17,7 @@ object NightlyBuildSupport {
       if (isNightly) {
         val file = dir / "commit"
         val commit = git("rev-parse", "HEAD")
-        IO.write(file, """<a href="https://github.com/spray/spray/commit/%1$s">%1$s</a>""" format commit)
+        IO.write(file, """<a href="https://github.com/m50d/spray/commit/%1$s">%1$s</a>""" format commit)
         artifacts + (Artifact(file.getName, "html", "html") -> file)
       } else artifacts
     }

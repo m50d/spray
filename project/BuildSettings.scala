@@ -63,8 +63,8 @@ object BuildSettings {
       pomIncludeRepository := { _ => false },
       pomExtra :=
         <scm>
-          <url>git://github.com/spray/spray.git</url>
-          <connection>scm:git:git@github.com:spray/spray.git</connection>
+          <url>git://github.com/m50d/spray.git</url>
+          <connection>scm:git:git@github.com:m50d/spray.git</connection>
         </scm>
         <developers>
           <developer><id>sirthias</id><name>Mathias Doenitz</name></developer>
