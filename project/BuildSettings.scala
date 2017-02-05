@@ -15,7 +15,7 @@ object BuildSettings {
   lazy val basicSettings = seq(
     version               := NightlyBuildSupport.buildVersion(VERSION),
     homepage              := Some(new URL("http://spray.io")),
-    organization          := "io.spray",
+    organization          := "com.github.m50d.spray",
     organizationHomepage  := Some(new URL("http://spray.io")),
     description           := "A suite of lightweight Scala libraries for building and consuming RESTful " +
                              "web services on top of Akka",
@@ -47,17 +47,10 @@ object BuildSettings {
       crossPaths := true,
       publishMavenStyle := true,
       SbtPgp.useGpg := true,
+      credentials += Credentials(Path.userHome / ".sbt" / "credentials"),
       publishTo <<= version { version =>
         Some {
-          if (version.contains("-")) {
-            "spray nexus" at {
-              // public uri is repo.spray.io, we use an SSH tunnel to the nexus here
-              "http://localhost:42424/content/repositories/" + {
-                if (version.trim.endsWith("SNAPSHOT")) "snapshots/" else
-                if (NightlyBuildSupport.isNightly) "nightlies/" else "releases/"
-              }
-            }
-          } else "sonatype release staging" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+          "bintray" at "https://api.bintray.com/maven/lmm/maven/spray/;publish=1"
         }
       },
       pomIncludeRepository := { _ => false },
