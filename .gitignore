@@ -15,11 +15,14 @@ out/
 
 # Eclipse
 .cache
+.cache-main
+.cache-tests
 .classpath
 .project
 .scala_dependencies
 .settings
 .target/
+bin
 
 # Mac
 .DS_Store

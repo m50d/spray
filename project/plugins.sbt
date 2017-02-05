@@ -23,3 +23,5 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-osgi" % "0.7.0")
 addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8.2")
 
 addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "1.0.0")
+
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.1.0")
