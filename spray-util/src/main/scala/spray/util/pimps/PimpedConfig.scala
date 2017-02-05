@@ -21,7 +21,7 @@ import scala.concurrent.duration.Duration
 
 class PimpedConfig(underlying: Config) {
 
-  def getDuration(path: String): Duration = underlying.getString(path) match {
+  def getScalaDuration(path: String): Duration = underlying.getString(path) match {
     case "infinite" ⇒ Duration.Inf
     case x          ⇒ Duration(x)
   }

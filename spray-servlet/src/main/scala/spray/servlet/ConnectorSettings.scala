@@ -46,8 +46,8 @@ case class ConnectorSettings(
 object ConnectorSettings extends SettingsCompanion[ConnectorSettings]("spray.servlet") {
   def fromSubConfig(c: Config) = apply(
     c getString "boot-class",
-    c getDuration "request-timeout",
-    c getDuration "timeout-timeout",
+    c getScalaDuration "request-timeout",
+    c getScalaDuration "timeout-timeout",
     c getString "timeout-handler",
     Uri.Path(c getString "root-path"),
     c getBoolean "remote-address-header",

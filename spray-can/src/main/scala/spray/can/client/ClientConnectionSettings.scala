@@ -55,14 +55,14 @@ object ClientConnectionSettings extends SettingsCompanion[ClientConnectionSettin
 
     apply(
       (c getString "user-agent-header" toOption).map(`User-Agent`(_)),
-      c getDuration "idle-timeout",
-      c getDuration "request-timeout",
-      c getDuration "reaping-cycle",
+      c getScalaDuration "idle-timeout",
+      c getScalaDuration "request-timeout",
+      c getScalaDuration "reaping-cycle",
       c getIntBytes "response-chunk-aggregation-limit",
       c getBoolean "chunkless-streaming",
       c getIntBytes "request-header-size-hint",
       c getIntBytes "max-encryption-chunk-size",
-      c getDuration "connecting-timeout",
+      c getScalaDuration "connecting-timeout",
       c getBoolean "ssl-tracing",
       ParserSettings fromSubConfig c.getConfig("parsing"),
       ProxySettings fromSubConfig c.getConfig("proxy"))

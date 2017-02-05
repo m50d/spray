@@ -40,6 +40,6 @@ object HostConnectorSettings extends SettingsCompanion[HostConnectorSettings]("s
     c getInt "host-connector.max-retries",
     c getInt "host-connector.max-redirects",
     c getBoolean "host-connector.pipelining",
-    c getDuration "host-connector.idle-timeout",
+    c getScalaDuration "host-connector.idle-timeout",
     ClientConnectionSettings fromSubConfig c.getConfig("client"))
 }
